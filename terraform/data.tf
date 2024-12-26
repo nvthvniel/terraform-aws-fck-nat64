@@ -93,12 +93,12 @@ data "aws_iam_policy_document" "trust_relationship" {
     sid = "EC2"
 
     principals {
-      type = "Service"
+      type        = "Service"
       identifiers = ["ec2.amazonaws.com"]
     }
 
     actions = [
-        "sts:AssumeRole"
+      "sts:AssumeRole"
     ]
   }
 }

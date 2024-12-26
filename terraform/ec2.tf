@@ -40,10 +40,10 @@ resource "aws_launch_template" "this" {
   }
 
   user_data = base64encode(templatefile("${path.module}/user_data.sh", {
-    TERRAFORM_ENI_ID = aws_network_interface.this.id
-    TERRAFORM_EIP_ID = aws_eip.this.id
-    TERRAFORM_LOGGING_DEBUG = var.jool_logging_debug
-    TERRAFORM_LOGGING_BIB = var.jool_logging_bib
+    TERRAFORM_ENI_ID          = aws_network_interface.this.id
+    TERRAFORM_EIP_ID          = aws_eip.this.id
+    TERRAFORM_LOGGING_DEBUG   = var.jool_logging_debug
+    TERRAFORM_LOGGING_BIB     = var.jool_logging_bib
     TERRAFORM_LOGGING_SESSION = var.jool_logging_session
   }))
 

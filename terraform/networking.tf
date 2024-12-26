@@ -71,6 +71,6 @@ resource "aws_route" "nat64" {
   count = length(var.route_table_ids)
 
   route_table_id         = var.route_table_ids[count.index]
-  destination_cidr_block = "64:ff9b::/96"
+  destination_ipv6_cidr_block = "64:ff9b::/96"
   network_interface_id   = aws_network_interface.this.id
 }

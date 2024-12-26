@@ -1,5 +1,5 @@
 resource "aws_iam_role" "this" {
-  name = var.resource_name
+  name               = var.resource_name
   assume_role_policy = data.aws_iam_policy_document.trust_relationship.json
 }
 
@@ -9,8 +9,8 @@ resource "aws_iam_instance_profile" "this" {
 }
 
 resource "aws_iam_policy" "this" {
-  name        = var.resource_name
-  path        = "/"
+  name = var.resource_name
+  path = "/"
 
   policy = data.aws_iam_policy_document.permission_policy.json
 }
@@ -21,6 +21,6 @@ resource "aws_iam_role_policy_attachment" "custom" {
 }
 
 resource "aws_iam_role_policy_attachment" "ssm" {
-  role       = aws_iam_role.role.name
+  role       = aws_iam_role.this.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
 }
