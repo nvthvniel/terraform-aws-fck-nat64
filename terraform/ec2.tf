@@ -65,4 +65,6 @@ resource "aws_instance" "main" {
     id      = aws_launch_template.this.id
     version = "$Latest"
   }
+
+  source_dest_check = false
 }
