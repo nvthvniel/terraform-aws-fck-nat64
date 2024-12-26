@@ -20,12 +20,13 @@ module "fck_nat64" {
   route_table_ids = [
     "rtb-aaa"                   # Where to set routes for fck-nat instance to handle requests
   ]
+  ...
 }
 ```
 * Replace `x.x.x` with a [tag version](https://github.com/nvthvniel/terraform-aws-fck-nat64/tags)
 * Ensure DNS64 is enabled on the route tables' subnets
 
-## Conributing
+## Contributing
 1. Create branch
 2. Commit changes to branch
 3. Push branch to repo
