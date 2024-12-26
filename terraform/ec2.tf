@@ -65,6 +65,6 @@ resource "aws_instance" "main" {
     version = "$Latest"
   }
 
-  source_dest_check = false
+  source_dest_check           = false
   user_data_replace_on_change = true
 }
