@@ -41,7 +41,7 @@ resource "aws_vpc_security_group_ingress_rule" "vpc_ipv4" {
 resource "aws_vpc_security_group_ingress_rule" "vpc_ipv6" {
   security_group_id = aws_security_group.this.id
 
-  cidr_ipv4   = data.aws_vpc.selected.ipv6_cidr_block
+  cidr_ipv6   = data.aws_vpc.selected.ipv6_cidr_block
   ip_protocol = -1
 }
 
@@ -70,7 +70,7 @@ resource "aws_route" "nat" {
 resource "aws_route" "nat64" {
   count = length(var.route_table_ids)
 
-  route_table_id         = var.route_table_ids[count.index]
+  route_table_id              = var.route_table_ids[count.index]
   destination_ipv6_cidr_block = "64:ff9b::/96"
-  network_interface_id   = aws_network_interface.this.id
+  network_interface_id        = aws_network_interface.this.id
 }
