@@ -24,8 +24,7 @@ resource "aws_launch_template" "this" {
   }
 
   network_interfaces {
-    network_interface_id  = aws_network_interface.this.id
-    delete_on_termination = true
+    network_interface_id = aws_network_interface.this.id
   }
 
   dynamic "tag_specifications" {
