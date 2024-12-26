@@ -66,4 +66,5 @@ resource "aws_instance" "main" {
   }
 
   source_dest_check = false
+  user_data_replace_on_change = true
 }
