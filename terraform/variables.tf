@@ -28,7 +28,7 @@ variable "ami_name" {
 variable "instance_type" {
   description = "EC2 instance type to build"
   type        = string
-  default     = "t4g.micro"
+  default     = "t4g.nano"
 }
 
 variable "resource_name" {

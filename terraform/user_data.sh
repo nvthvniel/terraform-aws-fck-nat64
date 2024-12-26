@@ -8,7 +8,7 @@ echo "eip_id=${TERRAFORM_EIP_ID}" >> /etc/fck-nat.conf
 service fck-nat restart
 
 
-
+mkdir -p /etc/jool
 cat << EOF > /etc/jool/jool.conf
 {
 	"instance": "fck-nat",
