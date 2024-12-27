@@ -4,7 +4,7 @@
 Some Terraform provided by [RaJiska's terraform-aws-fck-nat repository](https://github.com/RaJiska/terraform-aws-fck-nat/tree/nat64) is used in this module
 
 ## Documentation
-* https://hello.nathanielstevens.app/posts/ip_best_of_both_aws/#implementationgi
+* https://hello.nathanielstevens.app/posts/ip_best_of_both_aws/#implementation
 
 ## Contributing
 1. Create branch
