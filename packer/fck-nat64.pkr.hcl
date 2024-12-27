@@ -220,6 +220,4 @@ build {
       "sudo mv /tmp/jool.sh /etc/init.d/jool"
     ]
   }
-
-  # sudo systemctl start jool
 }
