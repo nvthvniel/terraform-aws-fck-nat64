@@ -33,6 +33,7 @@ resource "aws_security_group" "this" {
 
 resource "aws_vpc_security_group_ingress_rule" "vpc_ipv4" {
   security_group_id = aws_security_group.this.id
+  description       = "${data.aws_vpc.selected.id} IPv4 CIDR"
 
   cidr_ipv4   = data.aws_vpc.selected.cidr_block
   ip_protocol = -1
@@ -40,6 +41,7 @@ resource "aws_vpc_security_group_ingress_rule" "vpc_ipv4" {
 
 resource "aws_vpc_security_group_ingress_rule" "vpc_ipv6" {
   security_group_id = aws_security_group.this.id
+  description       = "${data.aws_vpc.selected.id} IPv6 Network border group"
 
   cidr_ipv6   = data.aws_vpc.selected.ipv6_cidr_block
   ip_protocol = -1
@@ -47,6 +49,7 @@ resource "aws_vpc_security_group_ingress_rule" "vpc_ipv6" {
 
 resource "aws_vpc_security_group_egress_rule" "all_ipv4" {
   security_group_id = aws_security_group.this.id
+  description       = "All IPv4 egress"
 
   cidr_ipv4   = "0.0.0.0/0"
   ip_protocol = -1
@@ -54,6 +57,7 @@ resource "aws_vpc_security_group_egress_rule" "all_ipv4" {
 
 resource "aws_vpc_security_group_egress_rule" "all_ipv6" {
   security_group_id = aws_security_group.this.id
+  description       = "All IPv6 egress"
 
   cidr_ipv6   = "::/0"
   ip_protocol = -1
