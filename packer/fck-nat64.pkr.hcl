@@ -203,11 +203,6 @@ build {
     ]
   }
 
-  # provisioner "file" {
-  #   source = "../service/jool.conf"
-  #   destination = "/etc/jool/jool.conf"
-  # }
-
   provisioner "file" {
     source = "${path.root}/../service/jool.service"
     destination = "/tmp/jool.service"
